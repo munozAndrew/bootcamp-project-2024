@@ -39,15 +39,15 @@ const blogs: Blog[] = [
         description: "aquired ",
         image: "./hank3.png",
         imageAlt: "./hank8/jpg",
-        slug:"https://www.indeed.com/q-mcdonald's-l-niles,-il-jobs.html?vjk=ca9f610de6765032",
+        slug:"job1",
     }, 
     {
         title: "job",
         date: "June 2026",
-        description: "aquired ",
-        image: "./hank3.png",
+        description: "acquired ",
+        image: "./hank8.jpg",
         imageAlt: "n",
-        slug:"https://www.indeed.com/q-mcdonald's-l-niles,-il-jobs.html?vjk=ca9f610de6765032",
+        slug:"job2",
 
     }
 
@@ -55,7 +55,7 @@ const blogs: Blog[] = [
 
 
 export function displayBlog(): void {
-    const blogcontainer = document.getElementById("blog-container");
+    const blogContainer = document.getElementById("blog-container");
 
     blogs.forEach((blog) => {
         const blogDiv = document.createElement('div');
@@ -66,14 +66,21 @@ export function displayBlog(): void {
         description.textContent = blog.description;
         const image = document.createElement('img');
         image.src =blog.image;
+
+        blogDiv.addEventListener('click', () => {
+            window.location.href = 'blogs/${blog.slug}.html';
+
+        });
+
         blogDiv.appendChild(title);
         blogDiv.appendChild(description);
         blogDiv.appendChild(image);
+        blogContainer?.appendChild(blogDiv);
 
-
-        blogcontainer?.appendChild(blogDiv);
-
+        
 
     });
 
 }
+
+displayBlog();
