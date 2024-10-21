@@ -34,7 +34,11 @@ body{
 }
 
 
+.img {
+    border-radius: 10px;
+    size: 10px;
 
+}
 
 
 

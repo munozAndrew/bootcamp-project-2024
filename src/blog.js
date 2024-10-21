@@ -1,54 +1,31 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.displayBlog = displayBlog;
-var persons = [
-    {
-        first: "radahn",
-        last: "starscourge",
-        age: "1200 years",
-    },
-    {
-        first: "morgott",
-        last: "veiled",
-        age: "1800 years",
-    }
-];
 var blogs = [
     {
         title: "Underwater ceramic technician at a multimillion dollar corporation",
         date: "June 2026",
-        description: "aquired ",
+        description: "Acquired skills",
         image: "./hank3.png",
-        imageAlt: "./hank8/jpg",
+        imageAlt: "Ceramic technician image",
         slug: "job1",
     },
     {
-        title: "job",
+        title: "Job Title",
         date: "June 2026",
-        description: "acquired ",
+        description: "Acquired experience",
         image: "./hank8.jpg",
-        imageAlt: "n",
+        imageAlt: "Job image",
         slug: "job2",
     }
 ];
-function displayBlog() {
-    var blogContainer = document.getElementById("blog-container");
-    blogs.forEach(function (blog) {
-        var blogDiv = document.createElement('div');
-        blogDiv.classList.add('post');
-        var title = document.createElement('h1');
-        title.textContent = blog.title;
-        var description = document.createElement('p');
-        description.textContent = blog.description;
-        var image = document.createElement('img');
-        image.src = blog.image;
-        blogDiv.addEventListener('click', function () {
-            window.location.href = 'blogs/${blog.slug}.html';
+function appendBlog() {
+    var blogContainer = document.getElementById('blog-container');
+    if (blogContainer) {
+        blogContainer.innerHTML = "";
+        blogs.forEach(function (b) {
+            var createEl = document.createElement("div");
+            createEl.className = 'blog-post';
+            createEl.innerHTML = "\n                <h2> <a href=\"blogs/".concat(b.slug, ".html\">").concat(b.title, "</h2>\n                <img src=\"").concat(b.image, "\" alt=\"").concat(b.imageAlt, "\"/>\n                <p>").concat(b.description, "</p>\n            ");
+            blogContainer.appendChild(createEl);
         });
-        blogDiv.appendChild(title);
-        blogDiv.appendChild(description);
-        blogDiv.appendChild(image);
-        blogContainer === null || blogContainer === void 0 ? void 0 : blogContainer.appendChild(blogDiv);
-    });
+    }
 }
-displayBlog();
+appendBlog();
