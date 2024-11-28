@@ -1,13 +1,11 @@
 import React from "react";
-import type { AppProps } from "next/app";
-import "../styles/globals.css"; // Make sure this path matches your structure
-import Navbar from "@/components/Navbar"; // Adjust path as necessary
+import Navbar from "@/components/Navbar"
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function HomePage() {
   return (
-    <>
-      <Navbar /> {/* This ensures the Navbar appears on every page */}
-      <Component {...pageProps} />
-    </>
+    <main>
+      <Navbar />
+      <h1>Hope you like my Website!</h1>
+    </main>
   );
 }

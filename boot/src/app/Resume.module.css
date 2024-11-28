@@ -1,0 +1,65 @@
+.resumeTitle {
+    text-align: center;
+    color: #e9ecef;
+  }
+  
+  .resume {
+    padding: 20px;
+    margin: 2rem 0;
+    background-color: #3d4146;
+    border-radius: 10px;
+  }
+  
+  .section {
+    padding: 20px 0;
+    border-bottom: 2px solid #343a40;
+  }
+  
+  .section:last-child {
+    border-bottom: 0;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .entry,
+  .courseList,
+  .skillList {
+    margin-bottom: 20px;
+  }
+  
+  .entryTitle {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .entryInfo,
+  .entryExperience,
+  .entryDescription {
+    margin-left: 20px;
+  }
+  
+  .courseList,
+  .skillList {
+    list-style-type: circle;
+  }
+  
+  .down {
+    display: block;
+    margin: 1rem auto 2rem;
+    padding: 10px 20px;
+    background-color: #1b1e21;
+    color: #ced4da;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .down:hover {
+    background-color: #212529;
+    transform: scale(1.05);
+  }
+  
