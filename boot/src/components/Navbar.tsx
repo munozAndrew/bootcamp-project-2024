@@ -12,6 +12,7 @@ export default function Navbar() {
         <Link href="/Home" >Home</Link>
         <Link href="/Blog">Blogs</Link>
         <Link href="/Resume" >Resume</Link>
+        <Link href="/Portfolio" >Portfolio</Link>
         <Link href="/Contact" >Contact Me</Link>
       </nav>
     </header>
