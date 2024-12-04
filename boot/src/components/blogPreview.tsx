@@ -1,9 +1,18 @@
 import React from 'react';
 import style from './blogPreview.module.css';
 import Image from "next/image";
-import { Blog } from "../static/blogData";
+//import { Blog } from "../static/blogData";
+//import Link from 'next/link';
 
-export default function BlogPreview(props: Blog) {
+type BlogProps = {
+  title: string;
+  date: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+};
+
+export default function BlogPreview(props: BlogProps) {
   return (
     <div className={style.blogPreview}>
       <h3>{props.title}</h3>

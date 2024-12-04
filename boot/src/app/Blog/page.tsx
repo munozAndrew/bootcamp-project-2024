@@ -3,6 +3,7 @@ import BlogPreview from '@/components/blogPreview';
 //import { blogs } from "../../static/blogData";
 import connectDB from '@/database/db';
 import Blog from '@/database/blogSchema';
+import Link from 'next/link';
 
 async function getBlogs() {
   await connectDB();
@@ -18,7 +19,7 @@ async function getBlogs() {
 
 
 export default async function BlogPage() {
-  const blogs = await getBlogs(); // Fetch blogs on the server
+  const blogs = await getBlogs();
 
   if (!blogs) {
     return (
@@ -34,6 +35,8 @@ export default async function BlogPage() {
       <h1>Blog Page</h1>
       <div>
         {blogs.map((blog) => (
+          <Link key={blog._id} href={`/Blog/${blog.slug}`}>
+
           <BlogPreview
             key={blog._id} 
             title={blog.title}
@@ -41,8 +44,9 @@ export default async function BlogPage() {
             description={blog.description}
             image={blog.image}
             imageAlt={blog.imageAlt}
-            slug={blog.slug}
           />
+          </Link>
+
         ))}
       </div>
     </main>

@@ -4,7 +4,7 @@ type PortfolioProject = {
     name: string;
     description: string;
     image: string;
-    link: string; // Link to learn more
+    link: string;
 };
 
 const portfolioSchema = new Schema<PortfolioProject>({

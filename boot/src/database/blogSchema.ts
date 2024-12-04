@@ -2,11 +2,11 @@ import mongoose, { Schema } from "mongoose";
 
 type Blog = {
     title: string;
-    slug: string;
     date: Date;
     description: string;
     image: string;
     imageAlt: string;
+    slug: string;
 };
 
 const blogSchema = new Schema<Blog>({
