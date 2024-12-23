@@ -1,12 +1,28 @@
 import mongoose, { Schema } from "mongoose";
 
+
+type IComment = {
+    user: string;
+    comment: string;
+    time: Date;
+  };
+
+  const commentSchema = new Schema<IComment>({
+    user:    { type: String, required: true },
+    comment: { type: String, required: true },
+    time:    { type: Date,   required: true },
+  });
+
 type Blog = {
     title: string;
+    slug: string;
     date: Date;
     description: string;
     image: string;
     imageAlt: string;
-    slug: string;
+
+    comments: IComment[];
+
 };
 
 const blogSchema = new Schema<Blog>({
@@ -16,6 +32,10 @@ const blogSchema = new Schema<Blog>({
     description: { type: String, required: true },
     image: { type: String, required: true }, 
     imageAlt: { type: String, required: true },
+    comments:    {
+        type: [commentSchema],
+        default: [],
+      },
 });
 
 const Blog = mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
