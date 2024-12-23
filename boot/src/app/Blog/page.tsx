@@ -35,7 +35,7 @@ export default async function BlogPage() {
       <h1>Blog Page</h1>
       <div>
         {blogs.map((blog) => (
-          <Link key={blog._id} href={`/Blog/${blog.slug}`}>
+          <Link key={blog._id} href={`/blog/${blog.slug}`}>
 
           <BlogPreview
             key={blog._id} 

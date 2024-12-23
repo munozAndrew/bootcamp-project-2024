@@ -1,22 +1,8 @@
+// app/blog/[slug]/page.tsx
 import React from "react";
 import connectDB from "@/database/db";
 import Blog from "@/database/blogSchema";
 import Comment from "@/components/comments";
-
-type Props = {
-  params: { slug: string };
-};
-
-async function getBlog(slug: string) {
-  await connectDB();
-  try {
-    const blog = await Blog.findOne({ slug }).orFail();
-    return blog;
-  } catch (err) {
-    console.error("Error fetching blog:", err);
-    return null;
-  }
-}
 
 type IComment = {
   user: string;
@@ -24,8 +10,21 @@ type IComment = {
   time: Date;
 };
 
-export default async function BlogPostPage({ params }: Props) {
-  const { slug }= params;
+async function getBlog(slug: string) {
+  await connectDB();
+  try {
+    const doc = await Blog.findOne({ slug }).orFail();
+
+    return JSON.parse(JSON.stringify(doc));
+  } catch (err) {
+    console.error("Error fetching blog:", err);
+    return null;
+  }
+}
+
+
+export default async function Page({ params }: { params: { slug: string } }) {
+  const { slug } = params; // destructure inside the function
   const blog = await getBlog(slug);
 
   if (!blog) {
@@ -40,15 +39,13 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <main>
       <h1>{blog.title}</h1>
-      {/* Convert "blog.date" to a nice string, e.g. using toLocaleDateString */}
       <p>{new Date(blog.date).toLocaleDateString()}</p>
       <img src={blog.image} alt={blog.imageAlt} />
       <div>{blog.content}</div>
 
-      {/* Comments Section */}
       <section>
         <h2>Comments</h2>
-        {blog.comments && blog.comments.length > 0 ? (
+        {blog.comments?.length ? (
           blog.comments.map((comment: IComment, index: number) => (
             <Comment key={index} comment={comment} />
           ))
