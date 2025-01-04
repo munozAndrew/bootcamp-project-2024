@@ -11,8 +11,9 @@ export async function getPortfolio() {
     try {
         const projects = await PortfolioProject.find().orFail(); 
         return projects;
-    } catch (err) {
-        console.error("Error fetching portfolio projects:", err);
+    } catch (error) {
+        
+        console.error(error);
         return null;
     }
 }
