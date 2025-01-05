@@ -1,10 +1,8 @@
 import React from "react";
-import Navbar from "@/components/Navbar"
-
+import styles from "./page.module.css"
 export default function HomePage() {
   return (
-    <main>
-      <Navbar />
+    <main className={styles.main}>
       <h1>Hope you like my Website!</h1>
     </main>
   );

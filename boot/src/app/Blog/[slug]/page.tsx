@@ -1,9 +1,9 @@
-// app/blog/[slug]/page.tsx
 import React from "react";
 import connectDB from "@/database/db";
 import Blog from "@/database/blogSchema";
 import Comment from "@/components/comments";
-import CommentForm from "./CommentForm";   // Import the Client Component for the form
+import CommentForm from "./CommentForm";
+import styles from "./blog.module.css"; // <-- Import our new CSS module
 
 type IComment = {
   user: string;
@@ -28,32 +28,35 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   if (!blog) {
     return (
-      <main>
-        <h1>Blog Not Found</h1>
-        <p>The requested blog could not be found.</p>
+      <main className={styles.blogPage}>
+        <h1 className={styles.blogTitle}>Blog Not Found</h1>
+        <p className={styles.blogDate}>The requested blog could not be found.</p>
       </main>
     );
   }
 
   return (
-    <main>
-      <h1>{blog.title}</h1>
-      <p>{new Date(blog.date).toLocaleDateString()}</p>
-      <img src={blog.image} alt={blog.imageAlt} />
-      <div>{blog.content}</div>
+    <main className={styles.blogPage}>
+      <h1 className={styles.blogTitle}>{blog.title}</h1>
+      <p className={styles.blogDate}>{new Date(blog.date).toLocaleDateString()}</p>
+      <img
+        src={blog.image}
+        alt={blog.imageAlt}
+        className={styles.blogImage}
+      />
+      <div className={styles.blogContent}>{blog.content}</div>
 
-      <section>
+      <section className={styles.commentSection}>
         <h2>Comments</h2>
         {blog.comments && blog.comments.length > 0 ? (
           blog.comments.map((comment: IComment, index: number) => (
             <Comment key={index} comment={comment} />
           ))
         ) : (
-          <p>No comments yet.</p>
+          <p className={styles.noComments}>No comments yet.</p>
         )}
       </section>
 
-      {/* Client Component form to add new comments */}
       <CommentForm slug={slug} />
     </main>
   );

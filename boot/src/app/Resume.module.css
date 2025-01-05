@@ -1,65 +1,93 @@
+/* Background + basic layout for the entire page */
+.main {
+  background-color: #3F0576;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #fff;
+  font-family: sans-serif;
+
+  /* Use Flexbox to center the Resume container horizontally */
+  display: flex;
+  justify-content: center;  /* horizontally center the container */
+  align-items: flex-start;   /* align items at the top (optional) */
+  text-align: center;
+}
+
+/* Resume container */
+.resume {
+  max-width: 800px; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* No text-align: center here => text stays left-aligned */
+}
+
+/* Title of the page */
 .resumeTitle {
-    text-align: center;
-    color: #e9ecef;
-  }
-  
-  .resume {
-    padding: 20px;
-    margin: 2rem 0;
-    background-color: #3d4146;
-    border-radius: 10px;
-  }
-  
-  .section {
-    padding: 20px 0;
-    border-bottom: 2px solid #343a40;
-  }
-  
-  .section:last-child {
-    border-bottom: 0;
-  }
-  
-  .sectionTitle {
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-  }
-  
-  .entry,
-  .courseList,
-  .skillList {
-    margin-bottom: 20px;
-  }
-  
-  .entryTitle {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-  
-  .entryInfo,
-  .entryExperience,
-  .entryDescription {
-    margin-left: 20px;
-  }
-  
-  .courseList,
-  .skillList {
-    list-style-type: circle;
-  }
-  
-  .down {
-    display: block;
-    margin: 1rem auto 2rem;
-    padding: 10px 20px;
-    background-color: #1b1e21;
-    color: #ced4da;
-    border-radius: 10px;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
-  
-  .down:hover {
-    background-color: #212529;
-    transform: scale(1.05);
-  }
-  
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  /* left-aligned by default */
+}
+
+/* Download link styling */
+.down {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0.6rem 1rem;
+  background-color: #7E57C2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.down:hover {
+  background-color: #9C7DFF;
+}
+
+/* Sections */
+.section {
+  background-color: rgba(255, 255, 255, 0.08); 
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Entries (Education, Projects, etc.) */
+.entry {
+  margin-bottom: 1rem;
+}
+
+.entryTitle {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.entryInfo {
+  margin-bottom: 0.5rem;
+  color: #eee;
+}
+
+.entryExperience,
+.entryDescription {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 0.5rem;
+}
+
+/* Lists (Courses, Skills) */
+.courseList,
+.skillList {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: #fff;
+}

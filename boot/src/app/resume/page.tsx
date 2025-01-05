@@ -1,16 +1,17 @@
+"use client";
 import React from "react";
-//import "../styles/globals.css"; 
-import styles from "../Resume.module.css"
+import styles from "../Resume.module.css";
 
 export default function Resume() {
   return (
-    <main>
-      <h1 className={styles.resumeTitle}>Resume</h1>
-      <a href="sssssss.pdf" download="" className={styles.down}>
-        Download Resume
-      </a>
-
+    <main className={styles.main}>
       <div className={styles.resume}>
+        <h1 className={styles.resumeTitle}>Resume</h1>
+
+        <a href="sssssss.pdf" download="" className={styles.down}>
+          Download Resume
+        </a>
+
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Education</h2>
           <div className={styles.entry}>
@@ -38,7 +39,7 @@ export default function Resume() {
             <li>HTML</li>
             <li>JS</li>
             <li>SQL</li>
-            <li>PYTHON</li>
+            <li>Python</li>
           </ul>
         </section>
 

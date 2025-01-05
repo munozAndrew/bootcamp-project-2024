@@ -1,0 +1,73 @@
+/* PortfolioProject.module.css */
+
+/*************************************************************
+ * Container for an individual portfolio project
+ *************************************************************/
+ .projectPortfolio {
+    display: flex;             /* Horizontal layout: image left, text right */
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;               /* Space between image & details */
+    background-color: rgba(255, 255, 255, 0.08); /* Subtle overlay on a dark bg */
+    padding: 1rem;
+    border-radius: 8px;        /* Smooth corners */
+    margin-bottom: 2rem;       /* Space under each card */
+    max-width: 600px;          /* Control how wide each project card can be */
+    margin: 0 auto 2rem;       /* Center horizontally + bottom spacing */
+  }
+  
+  /* The image link wrapper (so user can click the image) */
+  .projectLink {
+    flex-shrink: 0;            /* Prevent image from shrinking if container is small */
+  }
+  
+  /* The project image */
+  .projectImage {
+    display: block;
+    width: 100px;              /* Adjust to your preferred size */
+    height: 100px;
+    object-fit: cover;         /* Crop images that aren’t exactly 1:1 ratio */
+    border-radius: 8px;        /* Rounded corners */
+  }
+  
+  /*************************************************************
+   * Project details on the right side
+   *************************************************************/
+  .projectDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;               /* Ensure text is visible on dark/purple bg */
+    flex: 1;                   /* Take up remaining space */
+  }
+  
+  .projectName {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .projectDescription {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /*************************************************************
+   * Learn More link (styled as a button)
+   *************************************************************/
+  .learnMore {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #7E57C2;  /* Slightly lighter purple */
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .learnMore:hover {
+    background-color: #9C7DFF;
+    transform: scale(1.05);
+  }
+  

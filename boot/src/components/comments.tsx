@@ -1,7 +1,7 @@
-// Comment.tsx
-"use client"; 
+"use client";
 
-import React from 'react';
+import React from "react";
+import styles from "./comments.module.css"; // Import the CSS module
 
 export type IComment = {
   user: string;
@@ -10,15 +10,14 @@ export type IComment = {
 };
 
 function parseCommentTime(time: Date): string {
-
   const options: Intl.DateTimeFormatOptions = {
-    month: 'long',   // e.g. September
-    day: 'numeric',  // e.g. 16
-    year: 'numeric', // e.g. 2024
-    hour: 'numeric',
-    minute: '2-digit'
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
   };
-  return new Date(time).toLocaleString('en-US', options);
+  return new Date(time).toLocaleString("en-US", options);
 }
 
 type CommentProps = {
@@ -27,10 +26,12 @@ type CommentProps = {
 
 export default function Comment({ comment }: CommentProps) {
   return (
-    <div>
-      <h4>{comment.user}</h4>
-      <p>{comment.comment}</p>
-      <span>{parseCommentTime(comment.time)}</span>
+    <div className={styles.commentContainer}>
+      <h4 className={styles.commentUser}>{comment.user}</h4>
+      <p className={styles.commentText}>{comment.comment}</p>
+      <span className={styles.commentTime}>
+        {parseCommentTime(comment.time)}
+      </span>
     </div>
   );
 }

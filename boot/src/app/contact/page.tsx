@@ -5,33 +5,27 @@ import styles from "../Contact.module.css";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-  // We'll attach the <form> element to this ref
   const formRef = useRef<HTMLFormElement>(null);
 
-  // State for showing success/error messages
   const [statusMessage, setStatusMessage] = useState("");
 
-  // Handler for form submission
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!formRef.current) return;
 
     try {
-      // Send the form to EmailJS
       const result = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "", // from .env
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "", // from .env
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "", 
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "", 
         formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" // from .env
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" 
       );
 
-      // If successful, show a success message
       console.log("EmailJS result:", result.text);
       setStatusMessage("Message sent successfully!");
       formRef.current.reset();
     } catch (error) {
-      // If something goes wrong, show an error
       console.error("EmailJS error:", error);
       setStatusMessage("Error sending message. Please try again later.");
     }
@@ -41,7 +35,6 @@ export default function Contact() {
     <main className={styles.contactPage}>
       <h1 className={styles.contactTitle}>Contact</h1>
 
-      {/* Attach our handleSubmit to the form's onSubmit */}
       <form
         ref={formRef}
         onSubmit={handleSubmit}
@@ -51,7 +44,6 @@ export default function Contact() {
           <label htmlFor="name" className={styles.formLabel}>
             Name:
           </label>
-          {/* IMPORTANT: Give a name attribute matching your EmailJS template variable */}
           <input
             type="text"
             id="name"
@@ -78,7 +70,6 @@ export default function Contact() {
           <label htmlFor="message" className={styles.formLabel}>
             Message:
           </label>
-          {/* Again, name must match your EmailJS template variable, e.g. {{message}} */}
           <textarea
             id="message"
             name="message"
@@ -93,7 +84,6 @@ export default function Contact() {
           <input type="submit" value="Send" className={styles.submitButton} />
         </div>
 
-        {/* Show a status message if we have one (either success or error) */}
         {statusMessage && <p style={{ marginTop: "1rem" }}>{statusMessage}</p>}
       </form>
     </main>

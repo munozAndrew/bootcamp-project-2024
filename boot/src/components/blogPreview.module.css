@@ -1,23 +1,34 @@
+/* blogPreview.module.css */
+
+/* Container for each blog preview card */
 .blogPreview {
-    margin: 20px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .blogPreview h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-  }
-  
-  .blogImage {
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .blogPreview p {
-    margin: 5px 0;
-    font-size: 1rem;
-  }
-  
+  background-color: rgba(255, 255, 255, 0.08); /* Subtle overlay on dark bg */
+  color: #fff;             /* White text for contrast */
+  padding: 1rem;          /* Spacing around content */
+  margin-bottom: 2rem;    /* Space between blog previews */
+  border-radius: 8px;     /* Smooth corners */
+  max-width: 600px;       /* Optional: limit width for readability */
+  margin: 0 auto;         /* Center horizontally if desired */
+  text-align: center;     /* Optionally center the text */
+}
+
+/* Style the blog title */
+.blogPreview h3 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+/* The blog image */
+.blogImage {
+  width: 100%;
+  height: auto;          /* Maintain aspect ratio */
+  border-radius: 8px;    /* Rounded corners on the image */
+  object-fit: cover;     /* Ensure image does not stretch */
+  margin-bottom: 1rem;   /* Space below the image */
+}
+
+/* The short description text */
+.blogPreview p {
+  margin-bottom: 0.5rem; /* Space between paragraphs */
+  line-height: 1.4;
+}

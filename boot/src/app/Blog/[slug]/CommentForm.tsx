@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import formStyles from "./CommentForm.module.css"; // <-- Import our new module
 
 type CommentFormProps = {
   slug: string;
@@ -21,7 +22,7 @@ export default function CommentForm({ slug }: CommentFormProps) {
     });
 
     if (response.ok) {
-      router.refresh();
+      router.refresh(); // Refresh the page to show the new comment
       setUser("");
       setComment("");
     } else {
@@ -30,29 +31,39 @@ export default function CommentForm({ slug }: CommentFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="user">Name:</label>
+    <form className={formStyles.commentForm} onSubmit={handleSubmit}>
+      <div className={formStyles.formGroup}>
+        <label className={formStyles.formLabel} htmlFor="user">
+          Name:
+        </label>
         <input
           id="user"
           type="text"
           value={user}
           onChange={(e) => setUser(e.target.value)}
           placeholder="Your Name"
+          className={formStyles.formInput}
           required
         />
       </div>
-      <div>
-        <label htmlFor="comment">Comment:</label>
+
+      <div className={formStyles.formGroup}>
+        <label className={formStyles.formLabel} htmlFor="comment">
+          Comment:
+        </label>
         <textarea
           id="comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           placeholder="Your Comment"
+          className={formStyles.formTextarea}
           required
         />
       </div>
-      <button type="submit">Add Comment</button>
+
+      <button type="submit" className={formStyles.submitButton}>
+        Add Comment
+      </button>
     </form>
   );
 }

@@ -2,13 +2,13 @@
   padding: 2rem 5%;
   max-width: 600px;
   margin: 2rem auto;
-  background-color: #3d4146;
+  background-color: #3F0576; /* Purple background to match the rest of the site */
   border-radius: 10px;
 }
 
 .contactTitle {
   text-align: center;
-  color: #e9ecef;
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 
@@ -24,17 +24,17 @@
 .formLabel {
   display: block;
   margin-bottom: 0.5rem;
-  color: #ced4da;
+  color: #e9ecef; /* Lighter text color for contrast */
 }
 
 .inputField,
 .textAreaField {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #adb5bd;
+  border: 1px solid #9C7DFF; 
   border-radius: 5px;
-  background-color: #2b2e33;
-  color: #ced4da;
+  background-color: #5B2E98;  
+  color: #fff;               
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -45,14 +45,14 @@
 .submitButton {
   border: none;
   padding: 10px 20px;
-  background-color: #1b1e21;
-  color: #ced4da;
+  background-color: #7E57C2;    
+  color: #fff;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .submitButton:hover {
-  background-color: #212529;
+  background-color: #9C7DFF;    
   transform: scale(1.05);
 }
