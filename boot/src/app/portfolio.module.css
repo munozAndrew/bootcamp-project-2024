@@ -1,15 +1,13 @@
-/*************************************************************
- *  PAGE-WIDE STYLING
- *************************************************************/
+
  .portfolioPage {
-    background-color: #3F0576; /* Purple background to match your site */
-    min-height: 100vh;        /* Fill the viewport vertically */
+    background-color: #8E94F2; 
+    min-height: 100vh;        
     padding: 2rem;
     color: #fff;
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;       /* Center content horizontally */
+    align-items: center;
   }
   
   .portfolioTitle {
@@ -17,10 +15,7 @@
     margin-bottom: 2rem;
     font-size: 2rem;
   }
-  
-  /*************************************************************
-   *  NO PROJECTS FOUND
-   *************************************************************/
+
   .noProjectsFound {
     text-align: center;
     margin-top: 2rem;
@@ -28,9 +23,7 @@
     color: #eee;
   }
   
-  /*************************************************************
-   *  PROJECT LIST (GRID)
-   *************************************************************/
+
   .projectList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -38,37 +31,28 @@
     width: 100%;
     max-width: 1000px;     /* Control overall grid width */
   }
-  
-  /*************************************************************
-   *  INDIVIDUAL PROJECT CARD
-   *************************************************************/
+
   .projectCard {
-    display: flex;                      /* Horizontal layout: image left, text right */
+    display: flex;                      
     flex-direction: row;
     align-items: center;
-    gap: 1.5rem;                        /* Space between image & text */
+    gap: 1.5rem;                        
     background-color: rgba(255, 255, 255, 0.08);
     padding: 1rem;
     border-radius: 8px;
   }
   
-  /* Keeps the image from shrinking if the card is narrow */
   .imageWrapper {
     flex-shrink: 0;
   }
   
-  /* 
-     Makes the image circular if it's square, 
-     object-fit: cover keeps the image from stretching.
-  */
+ 
   .roundImage {
     border-radius: 50%;
     object-fit: cover;
   }
   
-  /*************************************************************
-   *  CARD TEXT
-   *************************************************************/
+
   .projectInfo {
     display: flex;
     flex-direction: column;
@@ -87,12 +71,10 @@
     line-height: 1.4;
   }
   
-  /*************************************************************
-   *  LEARN MORE BUTTON
-   *************************************************************/
+ 
   .learnMoreButton {
     display: inline-block;
-    background-color: #7E57C2; /* Slightly lighter purple for contrast */
+    background-color: #7E57C2; 
     color: #fff;
     text-decoration: none;
     padding: 0.6rem 1rem;

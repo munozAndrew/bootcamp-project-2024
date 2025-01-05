@@ -1,33 +1,30 @@
-/* comment.module.css */
 
-/* Container for an individual comment */
 .commentContainer {
-    background-color: rgba(255, 255, 255, 0.08); /* Subtle overlay on dark bg */
-    color: #fff;               /* White text for contrast */
-    padding: 1rem;            /* Space around content */
-    margin-bottom: 1rem;      /* Space between comments */
-    border-radius: 8px;       /* Smooth corners */
-    max-width: 600px;         /* Optional: control width for readability */
-    margin: 0 auto;           /* Center horizontally if desired */
+    background-color: #171717; 
+    color: #fff;               
+    padding: 1rem;            
+    margin-bottom: 1rem;      
+    border-radius: 8px;       
+    max-width: 600px;         
+    margin: 0 auto;           
   }
   
-  /* Username/title styling */
   .commentUser {
-    margin: 0 0 0.5rem;       /* Space after heading */
+    margin: 0 0 0.5rem;       
     font-size: 1.1rem;
     font-weight: bold;
   }
   
-  /* The comment text */
+  
   .commentText {
-    margin: 0 0 0.5rem;       /* Space between text and time */
+    margin: 0 0 0.5rem;       
     line-height: 1.4;
     font-size: 0.95rem;
   }
   
-  /* The timestamp */
+  
   .commentTime {
     font-size: 0.8rem;
-    color: #ccc;              /* Slightly lighter than main text */
+    color: #ccc;             
   }
   

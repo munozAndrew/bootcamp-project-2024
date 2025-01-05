@@ -1,44 +1,38 @@
-/*******************************************************
- *  Styles for the comment form (CommentForm.tsx)
- *******************************************************/
+
  .commentForm {
     max-width: 500px;
-    margin: 2rem auto; /* center form and give vertical space */
-    background-color: rgba(255, 255, 255, 0.08);
+    margin: 2rem auto; 
+    background-color: #171717;
     border-radius: 8px;
     padding: 1rem;
   }
   
-  /* Each label + input/textarea grouping */
   .formGroup {
     margin-bottom: 1rem;
   }
   
-  /* Labels */
   .formLabel {
     display: block;
     margin-bottom: 0.5rem;
     color: #eee;
   }
   
-  /* Inputs and textarea styles */
   .formInput,
   .formTextarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #9c7dff;  /* Light purple border */
+    border: 1px solid #9c7dff;  
     border-radius: 5px;
-    background-color: #5b2e98;  /* A deeper purple or your choice */
-    color: #fff;               /* White text for contrast */
-    font-family: "Josefin Sans", sans-serif; /* match your site fonts */
-    outline: none; /* remove default outline on focus (optional) */
+    background-color: #171717;  
+    color: #fff;               
+    font-family: "Josefin Sans", sans-serif; 
+    outline: none; 
   }
   
   .formTextarea {
-    resize: vertical; /* allows vertical resizing if text gets long */
+    resize: vertical; 
   }
   
-  /* Button styles */
   .submitButton {
     background-color: #7e57c2; 
     color: #fff;
@@ -48,11 +42,9 @@
     cursor: pointer;
     font-weight: 500;
   
-    /* transitions for a smoother hover effect */
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
-  /* Hover effect */
   .submitButton:hover {
     background-color: #9c7dff;
     transform: scale(1.05);

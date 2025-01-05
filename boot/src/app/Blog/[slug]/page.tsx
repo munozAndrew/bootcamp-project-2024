@@ -3,7 +3,7 @@ import connectDB from "@/database/db";
 import Blog from "@/database/blogSchema";
 import Comment from "@/components/comments";
 import CommentForm from "./CommentForm";
-import styles from "./blog.module.css"; // <-- Import our new CSS module
+import styles from "./blog.module.css"; 
 
 type IComment = {
   user: string;

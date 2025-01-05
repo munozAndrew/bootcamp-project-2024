@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import formStyles from "./CommentForm.module.css"; // <-- Import our new module
+import formStyles from "./CommentForm.module.css"; 
 
 type CommentFormProps = {
   slug: string;
@@ -22,7 +22,7 @@ export default function CommentForm({ slug }: CommentFormProps) {
     });
 
     if (response.ok) {
-      router.refresh(); // Refresh the page to show the new comment
+      router.refresh(); 
       setUser("");
       setComment("");
     } else {

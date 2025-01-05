@@ -1,8 +1,5 @@
-/* about.module.css */
-.main {
-  background-color: #DAB6FC; 
 
-}
+
 .aTitle {
   text-align: center;
   color: #ffffff;
@@ -17,8 +14,8 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin: 2rem auto; /* optional spacing around the section */
-  max-width: 800px;  /* limit the width if you'd like */
+  margin: 2rem auto; 
+  max-width: 800px;  
 }
 
 .aboutImage {
@@ -28,9 +25,9 @@
 }
 
 .roundImage {
-  border-radius: 50%;    /* make the image circular */
-  object-fit: cover;     /* ensure the image doesn’t stretch */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* optional shadow for style */
+  border-radius: 50%;    
+  object-fit: cover;     
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); 
 }
 
 .aboutText {
@@ -38,5 +35,5 @@
   font-family: sans-serif;
   line-height: 1.5;
   font-size: 1rem;
-  max-width: 400px; /* so text doesn’t stretch out too wide */
+  max-width: 400px; 
 }

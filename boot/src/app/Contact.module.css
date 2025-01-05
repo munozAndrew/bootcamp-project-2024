@@ -2,7 +2,7 @@
   padding: 2rem 5%;
   max-width: 600px;
   margin: 2rem auto;
-  background-color: #3F0576; /* Purple background to match the rest of the site */
+  background-color: #171717; 
   border-radius: 10px;
 }
 
@@ -24,7 +24,7 @@
 .formLabel {
   display: block;
   margin-bottom: 0.5rem;
-  color: #e9ecef; /* Lighter text color for contrast */
+  color: #e9ecef; 
 }
 
 .inputField,

@@ -1,44 +1,37 @@
-/* PortfolioProject.module.css */
 
-/*************************************************************
- * Container for an individual portfolio project
- *************************************************************/
  .projectPortfolio {
-    display: flex;             /* Horizontal layout: image left, text right */
+    display: flex;             
     flex-direction: row;
     align-items: center;
-    gap: 1.5rem;               /* Space between image & details */
-    background-color: rgba(255, 255, 255, 0.08); /* Subtle overlay on a dark bg */
+    gap: 1.5rem;               
+    background-color: #171717; 
     padding: 1rem;
-    border-radius: 8px;        /* Smooth corners */
-    margin-bottom: 2rem;       /* Space under each card */
-    max-width: 600px;          /* Control how wide each project card can be */
-    margin: 0 auto 2rem;       /* Center horizontally + bottom spacing */
+    border-radius: 8px;        
+    margin-bottom: 2rem;       
+    max-width: 600px;          
+    margin: 0 auto 2rem;       
   }
   
-  /* The image link wrapper (so user can click the image) */
+  
   .projectLink {
-    flex-shrink: 0;            /* Prevent image from shrinking if container is small */
+    flex-shrink: 0;            
   }
   
-  /* The project image */
+  
   .projectImage {
     display: block;
-    width: 100px;              /* Adjust to your preferred size */
+    width: 100px;              
     height: 100px;
-    object-fit: cover;         /* Crop images that aren’t exactly 1:1 ratio */
-    border-radius: 8px;        /* Rounded corners */
+    object-fit: cover;         
+    border-radius: 8px;        
   }
   
-  /*************************************************************
-   * Project details on the right side
-   *************************************************************/
   .projectDetails {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #fff;               /* Ensure text is visible on dark/purple bg */
-    flex: 1;                   /* Take up remaining space */
+    color: #fff;               
+    flex: 1;                   
   }
   
   .projectName {
@@ -53,14 +46,11 @@
     line-height: 1.4;
   }
   
-  /*************************************************************
-   * Learn More link (styled as a button)
-   *************************************************************/
   .learnMore {
     display: inline-block;
     text-decoration: none;
     color: #fff;
-    background-color: #7E57C2;  /* Slightly lighter purple */
+    background-color: #7E57C2;  
     padding: 0.6rem 1rem;
     border-radius: 4px;
     transition: background-color 0.2s ease, transform 0.2s ease;
