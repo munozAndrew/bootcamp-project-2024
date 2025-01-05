@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import formStyles from "./CommentForm.module.css"; 
+import formStyles from "./commentForm.module.css"; 
 
 type CommentFormProps = {
   slug: string;
