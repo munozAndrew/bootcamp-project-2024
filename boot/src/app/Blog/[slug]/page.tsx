@@ -1,5 +1,3 @@
-// src/app/Blog/[slug]/page.tsx
-
 import React from "react";
 import connectDB from "@/database/db";
 import Blog from "@/database/blogSchema";
@@ -24,14 +22,7 @@ async function getBlog(slug: string) {
   }
 }
 
-// Define the props type for this page:
-interface BlogPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function Page({ params }: BlogPageProps) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const blog = await getBlog(slug);
 
